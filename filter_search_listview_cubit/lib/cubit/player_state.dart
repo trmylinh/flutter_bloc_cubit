@@ -16,11 +16,16 @@ final List<Map<String, dynamic>> allPlayers = [
 sealed class PlayerState {}
 
 final class PlayerInitialState extends PlayerState {
-  final List<Map<String, dynamic>> players;
+  final List<Player> players;
   PlayerInitialState(this.players);
 }
 
 final class PlayerFilterState extends PlayerState {
-  final List<Map<String, dynamic>> filterPlayers;
+  final List<Player> filterPlayers;
   PlayerFilterState(this.filterPlayers);
+}
+
+final class PlayerUpdatedState extends PlayerState {
+  final List<Player> updatedPlayers;
+  PlayerUpdatedState(this.updatedPlayers);
 }
